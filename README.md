@@ -76,6 +76,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-- [Botkit](https://botkit.com/) for the Slack bot framework
+- [Botkit](https://github.com/howdyai/botkit) for the Slack bot framework
 - [Slack API](https://api.slack.com/) for enabling bot interactions
 - All other open-source libraries used in this project
