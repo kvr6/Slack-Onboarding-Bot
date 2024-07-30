@@ -1,22 +1,28 @@
 # Slack Onboarding Bot
 
-This project implements an onboarding bot for Slack that automatically interacts with new team members and provides them access to relevant software and databases.
+A Slack bot for automating the onboarding process of new team members. This bot helps streamline the process of granting access to various software and databases that new employees need.
 
 ## Features
 
 - Welcomes new team members when they join the Slack workspace
-- Asks about required software and database access
-- Automates the process of granting access to requested resources
+- Guides new members through the onboarding process
+- Automates access requests for various software (JIRA, GitHub, Confluence)
+- Handles database access requests
+- Notifies IT team for manual interventions when necessary
 
 ## Prerequisites
 
-- Node.js (v12 or later)
-- npm (Node Package Manager)
-- A Slack workspace with permissions to add bots
+- Node.js (v14 or later)
+- npm
+- PostgreSQL database
+- Slack workspace with admin privileges
+- JIRA account
+- GitHub organization
+- Confluence account
 
 ## Installation
 
-1. Clone this repository:
+1. Clone the repository:
    ```
    git clone https://github.com/yourusername/slack-onboarding-bot.git
    cd slack-onboarding-bot
@@ -27,37 +33,49 @@ This project implements an onboarding bot for Slack that automatically interacts
    npm install
    ```
 
-3. Set up your environment variables:
-   - Copy the `.env.example` file to a new file named `.env`:
-     ```
-     cp .env.example .env
-     ```
-   - Open the `.env` file and fill in your actual values for each variable.
+3. Run the setup script to create your `.env` file:
+   ```
+   npm run setup
+   ```
 
-   **Important:** The `.env` file contains sensitive information and should never be committed to the repository. It is already included in `.gitignore` to prevent accidental commits. Always keep your actual `.env` file secure and never share it publicly.
+4. After the setup script, review your `.env` file and make any necessary adjustments.
 
 ## Usage
 
 To start the bot:
 
 ```
-node bot.js
+npm start
+```
+
+For development with auto-restart on file changes:
+
+```
+npm run dev
 ```
 
 ## Testing
 
-To run the Selenium tests:
+To run the test suite:
 
 ```
 npm test
 ```
 
-Note: Make sure you have Chrome WebDriver installed and configured for Selenium tests.
-
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Acknowledgments
+
+- [Botkit](https://botkit.com/) for the Slack bot framework
+- [Slack API](https://api.slack.com/) for enabling bot interactions
+- All other open-source libraries used in this project
